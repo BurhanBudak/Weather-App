@@ -1,46 +1,9 @@
 import React from "react"
-import { SafeAreaView, StyleSheet, Text, FlatList, StatusBar, ImageBackground } from "react-native"
+import { SafeAreaView, StyleSheet, FlatList, StatusBar, ImageBackground } from "react-native"
 import ListItem from '../components/ListItem';
-const DATA = [
-  {
-    dt_txt: "2022-08-30 12:00:00",
-    main: {
-      temp_min: 10.76,
-      temp_max: 15.87,
-    },
-    weather: [
-      {
-        main: "Rain",
-      },
-    ],
-  },
-  {
-    dt_txt: "2022-08-30 15:00:00",
-    main: {
-      temp_min: 10.76,
-      temp_max: 20.87,
-    },
-    weather: [
-      {
-        main: "Clouds",
-      },
-    ],
-  },
-  {
-    dt_txt: "2022-08-30 18:00:00",
-    main: {
-      temp_min: 5.76,
-      temp_max: 15.87,
-    },
-    weather: [
-      {
-        main: "Clear",
-      },
-    ],
-  },
-];
 
-const UpcomingWeather = () => {
+
+const UpcomingWeather = ( {weatherData} ) => {
     const renderItem = ({item}) => (
       <ListItem
         condition={item.weather[0].main}
@@ -56,9 +19,8 @@ const UpcomingWeather = () => {
           source={require("../../assets/upcoming.jpg")}
           style={image}
         >
-        <Text>Uppcoming Weather</Text>
         <FlatList
-          data={DATA}
+          data={weatherData}
           renderItem={renderItem}
           keyExtractor={(item) => item.dt_txt}
           // ItemSeparatorComponent={() => (
@@ -75,7 +37,6 @@ const styles = StyleSheet.create({
         marginTop: StatusBar.currentHeight || 0,
         backgroundColor: 'royalblue',
     },
-    
     image: {
         flex: 1
     }
