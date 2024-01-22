@@ -11,9 +11,9 @@ const ListItem = (props) => {
   const { item, date, temp, dateTextwrapper } = styles;
   
   return (
-    <View style={[item, { backgroundColor: weatherType[condition].backgroundColor } ]}>
+    <View style={[item, { backgroundColor: weatherType[condition]?.backgroundColor } ]}>
       <Feather
-        name={weatherType[condition].icon}
+        name={weatherType[condition]?.icon}
         size={50}
         color={"white"}
       ></Feather>

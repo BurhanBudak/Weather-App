@@ -12,7 +12,7 @@ const Tabs = ({ weather }) => {
     <Tab.Navigator
       screenOptions={{
         tabBarActiveTintColor: "tomato",
-        tabBarInactiveTintColor: "gray",
+        tabBarInactiveTintColor: "grey",
         tabBarStyle: {
           backgroundColor: "lightblue",
         },
@@ -21,7 +21,7 @@ const Tabs = ({ weather }) => {
         },
         headerTitleStyle: {
           fontWeight: "bold",
-          fontSize: "25",
+          fontSize: 25,
           color: "tomato",
         },
       }}
@@ -58,7 +58,7 @@ const Tabs = ({ weather }) => {
       </Tab.Screen>
       <Tab.Screen
         name={"City"}
-        component={City}
+        
         options={{
           tabBarIcon: ({ focused }) => (
             <Feather
@@ -68,7 +68,9 @@ const Tabs = ({ weather }) => {
             />
           ),
         }}
-      />
+      >
+        {() => <City weatherData={weather.city}  />}
+      </Tab.Screen>
     </Tab.Navigator>
   );
 };

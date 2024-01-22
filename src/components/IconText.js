@@ -14,11 +14,11 @@ const IconText = (props) => {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        alignItems: 'center'
-    },
     textTheme: {
         fontWeight: 'bold'
+    },
+    container: {
+        alignItems: 'center'
     }
 })
 export default IconText
